@@ -1,0 +1,38 @@
+<xs:element name="PMML">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element ref="Header"/>
+      <xs:element ref="MiningBuildTask" minOccurs="0"/>
+      <xs:element ref="DataDictionary"/>
+      <xs:element ref="TransformationDictionary" minOccurs="0"/>
+      <xs:sequence minOccurs="0" maxOccurs="unbounded">
+        <xs:group ref="MODEL-ELEMENT"/>
+      </xs:sequence>
+      <xs:element ref="Extension" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+    <xs:attribute name="version" type="xs:string" use="required"/>
+  </xs:complexType>
+</xs:element>
+
+<xs:group name="MODEL-ELEMENT">
+  <xs:choice>
+    <xs:element ref="AssociationModel"/>
+    <xs:element ref="BayesianNetworkModel"/>
+    <xs:element ref="BaselineModel"/>
+    <xs:element ref="ClusteringModel"/>
+    <xs:element ref="GaussianProcessModel"/>
+    <xs:element ref="GeneralRegressionModel"/>
+    <xs:element ref="MiningModel"/>
+    <xs:element ref="NaiveBayesModel"/>
+    <xs:element ref="NearestNeighborModel"/>
+    <xs:element ref="NeuralNetwork"/>
+    <xs:element ref="RegressionModel"/>
+    <xs:element ref="RuleSetModel"/>
+    <xs:element ref="SequenceModel"/>
+    <xs:element ref="Scorecard"/>
+    <xs:element ref="SupportVectorMachineModel"/>
+    <xs:element ref="TextModel"/>
+    <xs:element ref="TimeSeriesModel"/>
+    <xs:element ref="TreeModel"/>
+  </xs:choice>
+</xs:group>
