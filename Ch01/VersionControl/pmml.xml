@@ -1,4 +1,4 @@
-<xs:element name="PMML">
+<xs:element name="PMML Modified">
   <xs:complexType>
     <xs:sequence>
       <xs:element ref="Header"/>
